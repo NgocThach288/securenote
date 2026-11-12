@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Secret note</title><link rel="stylesheet" href="/css/style.css"></head>
+<body><div class="wrap">
+<header><a class="brand" href="/">SecureNote</a></header>
+
+<div id="ld" class="card center"><span class="sub">Checking...</span></div>
+
+<div id="ask" hidden>
+  <h1>You have a secret note</h1>
+  <p class="sub">Once you open it, the note is permanently deleted and cannot be viewed again. Copying is blocked, and your IP address and the time are watermarked on the note.</p>
+  <div class="card">
+    <div id="pwb" hidden style="margin-bottom:18px"><label for="pw">Password</label><input id="pw" type="password" autocomplete="off"></div>
+    <button class="btn" id="rd">Show note</button> <span class="err" id="er"></span>
+  </div>
+</div>
+
+<div id="out" hidden class="protect">
+  <h1>Your note</h1>
+  <p class="sub">This note has been deleted from the server. Finish reading before you close or reload this page.</p>
+  <div class="vbar"><span id="vi">Do not leave this window while reading</span><b id="cd"></b></div>
+  <div class="stage" id="stage"><canvas id="cv"></canvas>
+    <div class="cover" id="cover" hidden><div><b>Content hidden</b><br>You left the window or a screenshot key was detected.<br>Click here to continue reading.</div></div></div>
+</div>
+
+<div id="dead" hidden>
+  <div class="card center"><h2 id="dm">This note does not exist or has been destroyed</h2>
+  <p class="sub" style="margin:8px 0 18px">This link can no longer be used.</p><a class="btn ghost" href="/" style="text-decoration:none;display:inline-block">Create a new note</a></div>
+</div>
+</div>
+<script src="/js/common.js"></script><script src="/js/note.js"></script></body></html>

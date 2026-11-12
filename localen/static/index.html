@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SecureNote – Self-destructing notes</title><link rel="stylesheet" href="/css/style.css"></head>
+<body><div class="wrap">
+<header><a class="brand" href="/">SecureNote</a></header>
+
+<div id="form">
+  <h1>Send a secret note</h1>
+  <p class="sub">Create a link that opens only once. After the recipient reads it, the note is permanently deleted.</p>
+  <div class="card">
+    <label for="tx">Note</label>
+    <textarea id="tx" maxlength="20000" placeholder="Type what you want to send..."></textarea>
+    <div class="grid">
+      <div><label for="ex">Delete if unread after</label>
+        <select id="ex"><option value="3600">1 hour</option><option value="86400" selected>24 hours</option><option value="604800">7 days</option><option value="2592000">30 days</option></select></div>
+      <div><label for="vt">Visible for, once opened</label>
+        <select id="vt"><option value="30">30 seconds</option><option value="60" selected>1 minute</option><option value="300">5 minutes</option><option value="0">No limit</option></select></div>
+    </div>
+    <div style="margin-top:16px"><label for="pw">Password (optional)</label><input id="pw" autocomplete="off" placeholder="Leave empty for no password"></div>
+    <div class="actions"><button class="btn" id="mk">Create link</button><span class="err" id="er"></span><span class="count" id="ct">0 / 20000</span></div>
+  </div>
+  <footer>The note is encrypted in your browser. The server stores only the encrypted text and never has the key. Copying is blocked for the reader and screenshot attempts are logged.</footer>
+</div>
+
+<div id="res" hidden>
+  <h1>Your link is ready</h1>
+  <p class="sub">Send this link to the recipient. The first person to open it can read the note, then it is destroyed.</p>
+  <div class="card">
+    <label for="lk">Note link</label>
+    <div class="linkbox"><input id="lk" readonly><button class="btn" id="cp">Copy</button></div>
+    <p class="hint">This link is shown only once. Copy it before leaving this page.</p>
+    <div class="actions"><button class="btn ghost" id="nw">Create another note</button></div>
+  </div>
+</div>
+</div>
+<script src="/js/common.js"></script><script src="/js/create.js"></script></body></html>

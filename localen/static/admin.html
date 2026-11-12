@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
+<title>Admin – SecureNote</title><link rel="stylesheet" href="/css/style.css"></head>
+<body><div class="wrap" style="max-width:820px">
+<header><a class="brand" href="/">SecureNote <span style="font-weight:400;color:var(--mu)">/ Admin</span></a><div class="nav"><a href="/">Create a note</a></div></header>
+<div id="denied" class="card center" hidden><h2>Access denied</h2><p class="sub">The admin page can only be opened on the machine running the server, via localhost.</p></div>
+<div id="app" hidden>
+  <div class="stats" id="st"></div>
+  <p class="sub" style="margin-bottom:14px">You can see times, IP addresses, devices and status. Note contents are encrypted and cannot be read by the admin.</p>
+  <div class="bar"><b>Notes</b><div class="row"><button class="btn ghost sm" id="rf">Refresh</button><button class="btn ghost sm" id="cu">Clean up read / expired</button></div></div>
+  <div id="list"></div>
+</div></div>
+<script src="/js/common.js"></script><script src="/js/admin.js"></script></body></html>
